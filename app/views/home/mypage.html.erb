@@ -1,0 +1,65 @@
+<header class="header">
+  <a href="/" class="logo">
+    Moody
+  </a>
+  <nav role="navigation">
+    <div id="menuToggle">
+      <!--
+      A fake / hidden checkbox is used as click reciever,
+      so you can use the :checked selector on it.
+      -->
+      <input type="checkbox" />
+      
+      <!--
+      Some spans to act as a hamburger.
+      
+      They are acting like a real hamburger,
+      not that McDonalds stuff.
+      -->
+      <span></span>
+      <span></span>
+      <span></span>
+      
+      <!--
+      Too bad the menu has to be inside of the button
+      but hey, it's pure CSS magic.
+      -->
+      <ul id="menu">
+        <li>
+          <%= link_to '게시물 등록하기', new_post_path %>
+        </li>
+        <li>
+          <a href="/home/mypage" class="nav_item"><li>마이페이지</li></a>
+        </li>
+        <li>
+          <a href="/users/sign_out" class="nav_item"><li>로그아웃</li></a>
+        </li>
+        <li>
+          <a href="/developers/index" class="nav_item"><li>개발자소개</li></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<div class="ban1 ban" id="ban1">
+</div> 
+
+<div class="y-profile-img y-myprofile-img" ></div>
+
+
+<div class="y-profile-name"><strong>박예은</strong></div>
+
+<div class='y-container'>
+ <div class="row", id="asdf" >
+    <div class="col-sm-12 col-md-6 col-xl-3">
+        <span class="check_0" id="check_1" onclick="check_1()">내가 쓴 경로</span>
+    </div>
+</div>
+     <div class="row", id="asdf" >
+
+    <div class="col-sm-12 col-md-6 col-xl-3">
+        <span class="check_0" id="check_1" onclick="check_1()">내가 구매한 경로</span>
+    </div>
+ </div>
+</div>

@@ -1,0 +1,205 @@
+<header class="header">
+  <a href="/" class="logo">
+    Moody
+  </a>
+  <div id="s-search-btn">
+    <input type="checkbox" class="s-search-btn-input" />
+    <%= image_tag("search.png") %>
+    <form action="/posts" method="get">
+      <div>여행 무드를 5개를 선택해주세요!</div>
+      <div class="s-mood-wrapper">
+        <div class="field s-mood">
+          <label for="romantic">romantic</label>
+          <input type="hidden" name="mood1" value="" />
+          <input type="checkbox" id="romantic" name="mood1" value="romantic"/>
+        </div>
+        
+        <div class="field s-mood">
+            <label for="tasty">tasty</label>
+            <input type="hidden" name="mood2" value="" />
+            <input type="checkbox" id="tasty" name="mood2" value="tasty"/>
+        </div>
+        
+        <div class="field s-mood">
+          <label for="luxury">luxury</label>
+          <input type="hidden" name="mood3" value="" />
+          <input type="checkbox" id="luxury" name="mood3" value="luxury"/>
+        </div>
+        
+        
+        <div class="field s-mood">
+          <label for="healing">healing</label>
+          <input type="hidden" name="mood4" value="" />
+          <input type="checkbox" id="healing" name="mood4" value="healing"/>
+        </div>
+        
+        <div class="field s-mood">
+          <label for="relaxing">relaxing</label>
+          <input type="hidden" name="mood5" value="" />
+          <input type="checkbox" id="relaxing" name="mood5" value="relaxing"/>
+        </div>
+        
+        <div class="field s-mood">
+          <label for="break away">break away</label>
+          <input type="hidden" name="mood6" value="" />
+          <input type="checkbox" id="break away" name="mood6" value="break away"/>
+        </div>
+        <div class="field s-mood">
+          <label for="peaceful">peaceful</label>
+          <input type="hidden" name="mood7" value="" />
+          <input type="checkbox" id="peaceful" name="mood7" value="peaceful"/>
+        </div>
+        <div class="field s-mood">
+          <label for="active">active</label>
+          <input type="hidden" name="mood8" value="" />
+          <input type="checkbox" id="active" name="mood8" value="active"/>
+        </div>
+        <div class="field s-mood">
+          <label for="challenging">challenging</label>
+          <input type="hidden" name="mood9" value="" />
+          <input type="checkbox" id="challenging" name="mood9" value="challenging"/>
+        </div>
+        <div class="field s-mood">
+          <label for="meaningful">meaningful</label>
+          <input type="hidden" name="mood10" value="" />
+          <input type="checkbox" id="meaningful" name="mood10" value="meaningful"/>
+        </div>
+        <div class="field s-mood">
+          <label for="traditional">traditional</label>
+          <input type="hidden" name="mood11" value="" />
+          <input type="checkbox" id="traditional" name="mood11" value="traditional"/>
+        </div>
+        <div class="field s-mood">
+          <label for="sight">sight</label>
+          <input type="hidden" name="mood12" value="" />
+          <input type="checkbox" id="sight" name="mood12" value="sight"/>
+        </div>
+      </div>
+      <div class="actions">
+        <input type="submit"/>
+      </div>
+    </form>
+  </div>
+  <nav role="navigation">
+    <div id="menuToggle">
+      <!--
+      A fake / hidden checkbox is used as click reciever,
+      so you can use the :checked selector on it.
+      -->
+      <input type="checkbox" />
+      
+      <!--
+      Some spans to act as a hamburger.
+      
+      They are acting like a real hamburger,
+      not that McDonalds stuff.
+      -->
+      <span></span>
+      <span></span>
+      <span></span>
+      
+      <!--
+      Too bad the menu has to be inside of the button
+      but hey, it's pure CSS magic.
+      -->
+      <ul id="menu">
+        <li>
+          <%= link_to '게시물 등록하기', new_post_path %>
+        </li>
+        <li>
+          <a href="/home/mypage" class="nav_item"><li>마이페이지</li></a>
+        </li>
+        <li>
+          <a href="/users/sign_out" class="nav_item"><li>로그아웃</li></a>
+        </li>
+        <li>
+          <a href="/developers/index" class="nav_item"><li>개발자소개</li></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<div class="s-wrapper">
+  <div>
+    <div class="s-list-wrapper">
+      <ul>
+        <% @posts.each do |post| %>
+          <li class="s-list">
+            <a class="s-list-item" href="/posts/<%= post.id %>">
+              <div class="s-img-wrapper">
+                <%= image_tag("#{post.postimg}", class: "s-img") %>
+              </div>
+              <div class="s-title">
+                <%= post.title %>
+              </div>
+              <ul>
+                <% if post.mood1 == 'romantic' %>
+                  <li><%= post.mood1 %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood2 == 'tasty' %>
+                  <li><%= post.mood2 %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood3 == 'luxury' %>
+                  <li><%= post.mood3 %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood4 == 'healing' %>
+                  <li><%= post.mood4 %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood5 == 'relaxing' %>
+                  <li><%= post.mood5 %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood6 == 'break away' %>
+                  <li><%= post.mood6 %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood7 == 'peaceful' %>
+                  <li><%= post.mood7 %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood8 == 'active' %>
+                  <li><%= post.mood8 %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood9 == 'challenging' %>
+                  <li><%= post.mood9 %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood10 == 'meaningful' %>
+                  <li><%= post.mood10 %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood11 == 'traditional' %>
+                  <li><%= post.mood11 %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood12 == 'sight' %>
+                  <li><%= post.mood12 %></li>
+                <% else %>
+                <% end %>
+              </ul>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+

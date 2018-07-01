@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  userid: 1
+  title: MyString
+  postimg: MyString
+  mood1: MyString
+  mood2: MyString
+  mood3: MyString
+  mood4: MyString
+  mood5: MyString
+
+two:
+  userid: 1
+  title: MyString
+  postimg: MyString
+  mood1: MyString
+  mood2: MyString
+  mood3: MyString
+  mood4: MyString
+  mood5: MyString

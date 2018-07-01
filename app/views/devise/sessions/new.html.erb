@@ -1,0 +1,37 @@
+<section class= "y-main-img" id="y-main-img">
+ <div class="y-box" >
+   <h2 class="y-log-in">Moody</h2>
+    <br>
+    <h3 class="y-intro">Moody는 숨겨진 여행의 무드를 발견하는 여행 경로 추천 서비스입니다</h3>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="y-email-field">
+          <%= f.label :email %>
+          <%= f.email_field :email, autocomplete: "off" , class: "y-email-box"%>
+        </div>
+
+        <div class="y-password-field">
+          <%= f.label :password %>
+          <%= f.password_field :password, autocomplete: "off" , class: "y-password-box" %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="y-remember-field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+         <% end -%>
+
+        <div class="actions">
+            <%= f.submit "Log in", class:"y-btn"%>
+        </div>
+      <% end %>
+    <div class="y-btn"><%= render "devise/shared/links" %></div>
+  </div>
+</section>
+
+
+
+
+
+
+

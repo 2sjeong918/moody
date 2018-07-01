@@ -1,0 +1,92 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.s-list-wrapper {
+    text-align: center;
+}
+.s-list {
+    padding: 12px;
+    width: 100%;
+}
+.s-list-item {
+    display: inline-block;
+    /*margin: 12px;*/
+    width: 100%;
+    background-color: #f7f7f7;
+    box-shadow: 0px 3px 15px 0 rgba(0, 0, 0, 0.3);
+    height: 100px;
+}
+.s-field{
+    margin: 20px 0;
+}
+.s-mood{
+    margin: 20px 0;
+    float: left;
+    // background: yellow;
+}
+.s-mood-wrapper {
+    // border: 1px solid #333;
+    margin:10px 0;
+    padding: 10px;
+}
+.s-mood-wrapper::after{
+    content:'';
+    display: block;
+    clear: both;
+}
+.s-form-wrapper{
+    text-align: left;
+    width: 80%;
+    margin: 20px auto;
+    font-size: 1.6rem;
+}
+
+.s-title{
+    font-size: 1.6rem;
+    margin-top: 15px;
+    margin-left: 20px;
+    float: left;
+}
+
+.s-img-wrapper{
+    width: 8rem;
+    height: 8rem;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    // padding-top: 100%;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin-top: 10px;
+    float: left;
+}
+
+.s-img {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.s-post-title {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-top: 15px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.s-back-btn {
+    display: block;
+    width: 40px;
+    height: 60px;
+    margin: 7px 0 0 10px;
+    z-index: 1;
+}
+.s-back-btn img {
+    width: 65%;
+}

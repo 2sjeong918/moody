@@ -1,0 +1,77 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <div class="field s-field">
+    <%= f.label :title, "제목" %>
+    <%= f.text_field :title, placeholder: "여행의 제목을 입력해주세요", :required => true %>
+  </div>
+  <div class="field s-field">
+    <%= f.label :postimg, "대표이미지" %>
+    <%= f.file_field :postimg, accept: 'image/png,image/gif,image/jpeg'%>
+  </div>
+  <div>여행 무드를 5개 선택해주세요!</div>
+  <div class="s-mood-wrapper">
+      <div class="field s-mood">
+      <%= f.label :mood1, "romantic" %>
+      <%= f.check_box :mood1, { checked: false }, 'romantic', '1' %>
+    </div>
+    <div class="field s-mood">
+      <%= f.label :mood2, "tasty" %>
+      <%= f.check_box :mood2, { checked: false }, 'tasty', '1' %>
+    </div>
+    <div class="field s-mood">
+      <%= f.label :mood3, "luxury" %>
+      <%= f.check_box :mood3, { checked: false }, 'luxury', '1' %>
+    </div>
+    <div class="field s-mood">
+      <%= f.label :mood4, "healing" %>
+      <%= f.check_box :mood4, { checked: false }, 'healing', '1' %>
+    </div>
+    <div class="field s-mood">
+      <%= f.label :mood5, "relaxing" %>
+      <%= f.check_box :mood5, { checked: false }, 'relaxing', '1' %>
+    </div>
+    <div class="field s-mood">
+      <%= f.label :mood6, "break away" %>
+      <%= f.check_box :mood6, { checked: false }, 'break away', '1' %>
+    </div>
+    <div class="field s-mood">
+      <%= f.label :mood7, "peaceful" %>
+      <%= f.check_box :mood7, { checked: false }, 'peaceful', '1' %>
+    </div>
+    <div class="field s-mood">
+      <%= f.label :mood8, "active" %>
+      <%= f.check_box :mood8, { checked: false }, 'active', '1' %>
+    </div>
+    <div class="field s-mood">
+      <%= f.label :mood9, "challenging" %>
+      <%= f.check_box :mood9, { checked: false }, 'challenging', '1' %>
+    </div>
+    <div class="field s-mood">
+      <%= f.label :mood10, "meaningful" %>
+      <%= f.check_box :mood10, { checked: false }, 'meaningful', '1' %>
+    </div>
+    <div class="field s-mood">
+      <%= f.label :mood11, "traditional" %>
+      <%= f.check_box :mood11, { checked: false }, 'traditional', '1' %>
+    </div>
+    <div class="field s-mood">
+      <%= f.label :mood12, "sight" %>
+      <%= f.check_box :mood12, { checked: false }, 'sight', '1' %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

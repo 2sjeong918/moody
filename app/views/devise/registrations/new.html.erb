@@ -1,0 +1,38 @@
+<section class= "y-main-img" id="y-main-img">
+ <div class="y-box">
+   <h2 class="y-log-in">Sign up</h2>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "y-email-box" %>
+  </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off", class:"y-password-box" %>
+    </div>
+  
+
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", class:"y-password-box" %>
+    </div>
+    <div class="field">
+      <%= f.label :myimg, "대표이미지" %><br>
+      <%= f.file_field :myimg %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up", class:"y-btn" %>
+     </div>
+   <% end %>
+
+ </div>
+</section>

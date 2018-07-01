@@ -1,0 +1,92 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+}
+.header {
+    /*background: linear-gradient(0.25turn, #ffb0a0, #e47c43);*/   
+    background: #000000;
+    height: 42px;
+    display: flex;
+    /*justify-content: space-between;*/
+}
+
+.logo{
+    font-size: 2rem;
+    margin: auto 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#s-search-btn {
+    /*width: 70%;*/
+    /*height: auto;*/
+    display: block;
+    position: fixed;
+    width: 40px;
+    height: 60px;
+    top: 5px;
+    right: 55px;
+    z-index: 1;
+      
+    -webkit-user-select: none;
+    user-select: none;
+}
+#s-search-btn .s-search-btn-input{
+    display: block;
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+}
+#s-search-btn img{
+    width: 80%;
+}
+
+#s-search-btn form{
+  position: absolute;
+  width: 400px;
+  margin: -100px 0 0 -300px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background-color: rgba(255, 255, 255, 0.8);
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  
+  
+  transform-origin: 0% 0%;
+  transform: translate(0, -100%);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#s-search-btn input:checked ~ form
+{
+  transform: none;
+}
