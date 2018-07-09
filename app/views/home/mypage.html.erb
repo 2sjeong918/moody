@@ -1,6 +1,6 @@
-<header class="header">
-  <a href="/" class="logo">
-    Moody
+<header class="header-b">
+ <a href="/" class="s-back-btn">
+    <%= image_tag("back_btn_w.png") %>
   </a>
   <nav role="navigation">
     <div id="menuToggle">
@@ -44,22 +44,184 @@
 
 <div class="ban1 ban" id="ban1">
 </div> 
+<div class="ban2">
+</div> 
 
-<div class="y-profile-img y-myprofile-img" ></div>
-
-
-<div class="y-profile-name"><strong>박예은</strong></div>
-
-<div class='y-container'>
- <div class="row", id="asdf" >
-    <div class="col-sm-12 col-md-6 col-xl-3">
-        <span class="check_0" id="check_1" onclick="check_1()">내가 쓴 경로</span>
-    </div>
+<div class="y-profile-img y-myprofile-img" ><%= image_tag("#{current_user.myimg}") %>
 </div>
-     <div class="row", id="asdf" >
 
-    <div class="col-sm-12 col-md-6 col-xl-3">
-        <span class="check_0" id="check_1" onclick="check_1()">내가 구매한 경로</span>
+
+<div class="y-profile-name"><strong>
+  <%= current_user.name%>
+</strong></div>
+
+ <div class="s-my-point-wrapper", id="asdf" >
+    <div class="s-my-point">
+        <input type='radio' id='my-point' name='group1' value='answer'checked='true' />
+        <label for='my-point' class="my-point">내가 쓴 경로</label>
+        <!--<span class="check_0" id="check_1" onclick="check_1()">내가 쓴 경로</span>-->
+        <ul>
+         <% @posts = Post.where(user_id:  current_user.id).all %>
+          <% @posts.each do |post| %>
+          <li class="s-list">
+            <a class="s-list-item" href="/posts/<%= post.id %>">
+              <div class="s-img-wrapper">
+                <%= image_tag("#{post.postimg}", class: "s-img") %>
+              </div>
+              <div class="s-card-content">
+                <div class="s-title">
+                <%= post.title %>
+              </div>
+              <ul class="s-card-mood">
+                <% if post.mood1 == 'romantic' %>
+                  <li><%= image_tag("romantic.png") %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood2 == 'tasty' %>
+                  <li><%= image_tag("tasty.png") %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood3 == 'luxury' %>
+                  <li><%= image_tag("luxury.png") %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood4 == 'healing' %>
+                  <li><%= image_tag("healing.png") %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood5 == 'relaxing' %>
+                  <li><%= image_tag("relaxing.png") %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood6 == 'escape' %>
+                  <li><%= image_tag("escape.png") %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood7 == 'peaceful' %>
+                  <li><%= image_tag("peaceful.png") %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood8 == 'active' %>
+                  <li><%= image_tag("active.png") %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood9 == 'challenging' %>
+                  <li><%= image_tag("romantic.png") %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood10 == 'meaningful' %>
+                  <li><%= image_tag("romantic.png") %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood11 == 'traditional' %>
+                  <li><%= image_tag("romantic.png") %></li>
+                <% else %>
+                <% end %>
+                
+                <% if post.mood12 == 'sight' %>
+                  <li><%= image_tag("sight.png") %></li>
+                <% else %>
+                <% end %>
+              </ul>
+              </div>
+              
+            </a>
+          </li>
+          <%end%>
+        </ul>
+      </div>
+    <div class="s-my-point">
+        <input type='radio' id='like-point' name='group1' value='answer' />
+        <label for='like-point' class="like-point">내가 사랑한 경로</label>
+        <!--<span class="check_0" id="check_1" onclick="check_1()">내가 사랑한 경로</span>-->
+        <ul>
+          <% @loves = Love.where(user_id:  current_user.id).all %>
+          <% @loves.each do |love| %>
+          <% post = Post.find(love.post_id) %>
+             <li class="s-list">
+              <a class="s-list-item" href="/posts/<%= post.id %>">
+                <div class="s-img-wrapper">
+                  <%= image_tag("#{post.postimg}", class: "s-img") %>
+                </div>
+                <div class="s-card-content">
+                  <div class="s-title">
+                  <%= post.title %>
+                </div>
+                <ul class="s-card-mood">
+                  <% if post.mood1 == 'romantic' %>
+                    <li><%= image_tag("romantic.png") %></li>
+                  <% else %>
+                  <% end %>
+                  
+                  <% if post.mood2 == 'tasty' %>
+                    <li><%= image_tag("tasty.png") %></li>
+                  <% else %>
+                  <% end %>
+                  
+                  <% if post.mood3 == 'luxury' %>
+                    <li><%= image_tag("luxury.png") %></li>
+                  <% else %>
+                  <% end %>
+                  
+                  <% if post.mood4 == 'healing' %>
+                    <li><%= image_tag("healing.png") %></li>
+                  <% else %>
+                  <% end %>
+                  
+                  <% if post.mood5 == 'relaxing' %>
+                    <li><%= image_tag("relaxing.png") %></li>
+                  <% else %>
+                  <% end %>
+                  
+                  <% if post.mood6 == 'escape' %>
+                    <li><%= image_tag("escape.png") %></li>
+                  <% else %>
+                  <% end %>
+                  
+                  <% if post.mood7 == 'peaceful' %>
+                    <li><%= image_tag("peaceful.png") %></li>
+                  <% else %>
+                  <% end %>
+                  
+                  <% if post.mood8 == 'active' %>
+                    <li><%= image_tag("active.png") %></li>
+                  <% else %>
+                  <% end %>
+                  
+                  <% if post.mood9 == 'challenging' %>
+                    <li><%= image_tag("romantic.png") %></li>
+                  <% else %>
+                  <% end %>
+                  
+                  <% if post.mood10 == 'meaningful' %>
+                    <li><%= image_tag("romantic.png") %></li>
+                  <% else %>
+                  <% end %>
+                  
+                  <% if post.mood11 == 'traditional' %>
+                    <li><%= image_tag("romantic.png") %></li>
+                  <% else %>
+                  <% end %>
+                  
+                  <% if post.mood12 == 'sight' %>
+                    <li><%= image_tag("sight.png") %></li>
+                  <% else %>
+                  <% end %>
+                </ul>
+                </div>
+              </a>
+            </li>
+          <%end%>
+        </ul>
     </div>
  </div>
-</div>

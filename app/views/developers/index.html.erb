@@ -1,67 +1,95 @@
-<div class="ban5 ban" id="ban5">
+
+
+<!DOCTYPE html>
+<html lang="en">
+<header class="header", id="header_section">
+ <a href="/" class="s-back-btn">
+    <%= image_tag("back_btn.png") %>
+  </a>
+  
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto+Mono" rel="stylesheet">
+
+  <nav role="navigation">
+    <div id="menuToggle">
+      <!--
+      A fake / hidden checkbox is used as click reciever,
+      so you can use the :checked selector on it.
+      -->
+      <input type="checkbox" />
+      
+      <!--
+      Some spans to act as a hamburger.
+      
+      They are acting like a real hamburger,
+      not that McDonalds stuff.
+      -->
+      <span></span>
+      <span></span>
+      <span></span>
+      
+      <!--
+      Too bad the menu has to be inside of the button
+      but hey, it's pure CSS magic.
+      -->
+      <ul id="menu">
+        <li>
+          <%= link_to '게시물 등록하기', new_post_path %>
+        </li>
+        <li>
+          <a href="/home/mypage" class="nav_item"><li>마이페이지</li></a>
+        </li>
+        <li>
+          <a href="/users/sign_out" class="nav_item"><li>로그아웃</li></a>
+        </li>
+        <li>
+          <a href="/developers/index" class="nav_item"><li>개발자소개</li></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<body>
+
+<section id="profile_section">
+<div class="profilecontent">
+<!--<h2 class="dev1">Moody</h2>-->
+<a class ="devlogo">
+<%= image_tag("logo.png") %>
+</a>
+</div>
+</section>
+
+<section id="friend_section">
+<div class="container">
+    <%= image_tag("bom.png") %>
+    <%= image_tag("sum.png") %>
+    <%= image_tag("gaeul.png") %>
+    <%= image_tag("win.png") %>
+
 </div>
 
-<div class="lineuptext"><strong>개발자 소개</strong></div>
+
+</section>
+
+<section class="friend_info" style="text-align:center;font-size:1.6rem;">
+  
+Isn't we lovely?
+
+</section>
 
 
-<div class='h-container'>
+<footer id="footer_section" style="text-align:center;font-size:1.6rem;">
+continue to be mapper
+</footer>
 
-      <div class="row">
-          
-          
-          <div class="col-sm-12 col-md-6 col-xl-3 ">
-              <div class="card h-card">
-                <div class="h-img-wrapper">
-                    <%= image_tag "#", class: "card-img-top h-img" %>
-                </div>
-              </div>
-          </div>
-          
-          <div class="col-sm-12 col-md-6 col-xl-3">
-              <div class="card h-card">
-                <div class="h-img-wrapper">
-                    <%= image_tag "#", class: "card-img-top h-img" %>
-                </div>
-              </div>
-          </div>
-          
-          <div class="col-sm-12 col-md-6 col-xl-3">
-              <div class="card h-card">
-                <div class="h-img-wrapper">
-                    <%= image_tag "#", class: "card-img-top h-img" %>
-                </div>
-              </div>
-          </div>
-          
-          <div class="col-sm-12 col-md-6 col-xl-3">
-              <div class="card h-card">
-                <div class="h-img-wrapper">
-                    <%= image_tag "#", class: "card-img-top h-img" %>
-                </div>
-              </div>
-          </div>
-          
-        
-          
-          
-        </div>
-        
 
-<br><br>
-
-<div class="lineuptext"><strong>팀 소개</strong></div>
-
-<br><br>
- <div class="col-sm-12 col-md-12 col-xl-12">
-<div>
- <div class="h-team-wrapper">
-    <%= image_tag "team.jpeg", class: "card-img-top team-img" %>
- </div>
- </div>
-</div>
-
-<br><br>
-<div class="team-text"> C2H5OH</div>
-    
-     
+</body>
+</html>
 

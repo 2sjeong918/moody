@@ -1,34 +1,108 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.s-wrapper {
+    padding: 10px;
+}
 
 .s-list-wrapper {
     text-align: center;
+    margin-top: 42px;
 }
 .s-list {
-    padding: 12px;
+    padding: 5px;
     width: 100%;
+    list-style: none;
 }
+
 .s-list-item {
     display: inline-block;
     /*margin: 12px;*/
     width: 100%;
     background-color: #f7f7f7;
-    box-shadow: 0px 3px 15px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.2);
     height: 100px;
 }
+
+.s-point-list {
+    padding: 15px 5px;
+    
+}
+
+.new_post{
+    margin-top: 42px;
+    font-size: 1.6rem;
+}
 .s-field{
-    margin: 20px 0;
+    margin: 20px 10px;
+}
+
+.s-field label{
+    display: inline-block;
+    width: 100px;
+}
+.s-field input{
+    border: 1px solid #333;
+    border-radius: 3px;
+    height: 25px;
+    padding: 0 5px;
+    width: 200px;
+}
+.s-sign-field {
+    
+}
+.s-sign-field label{
+    display: inline-block;
+    width: 80px;
+    font-size: 1.4rem;
+}
+.s-sign-field input{
+    border: 1px solid #333;
+    border-radius: 3px;
+    height: 25px;
+    padding: 0 5px;
+    width: 150px;
+}
+
+.point-wrapper {
+    margin: 8px;
+    // background: #f7f7f7;
+    // border: 2px solid #9e66d8;
+    border-radius: 2px;
+    padding: 10px;
+    box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.s-mood-container {
+    margin: 20px 10px;
 }
 .s-mood{
+    color:#9e66d8;
     margin: 20px 0;
     float: left;
-    // background: yellow;
+}
+.s-mood label{
+    background:#f7f7f7;
+    border: 1px solid #9e66d8;
+    border-radius: 25px;
+    padding: 5px 10px;
+}
+.s-mood input{
+    opacity: 0;
+}
+.s-mood input:checked ~ label{
+    background: #9e66d8;
+    linear-gradient: (to left, #b298e4 ,#ecbfe2);
+    color: #FFF;
+}
+.s-search-title {
+    font-size: 1.6rem;
+    
 }
 .s-mood-wrapper {
     // border: 1px solid #333;
-    margin:10px 0;
+    // margin:10px 0;
     padding: 10px;
+    font-size: 1.6rem;
 }
 .s-mood-wrapper::after{
     content:'';
@@ -42,11 +116,26 @@
     font-size: 1.6rem;
 }
 
-.s-title{
+.s-card-content{
     font-size: 1.6rem;
     margin-top: 15px;
-    margin-left: 20px;
-    float: left;
+    margin-left: 10px;
+    color: #333;
+    text-align: left;
+}
+.s-card-mood {
+    font-size: 1rem;
+    display: flex;
+    margin: 10px 0;
+    li{
+        margin:2px;
+        width: 43px;
+        // background: #fff;
+        text-align: center;
+        img{
+            width: 100%;
+        }
+    }
 }
 
 .s-img-wrapper{
@@ -57,8 +146,9 @@
     overflow: hidden;
     // padding-top: 100%;
     border-radius: 3px;
-    margin-left: 10px;
-    margin-top: 10px;
+    // margin-left: 10px;
+    // margin-top: 10px;
+    margin: 10px;
     float: left;
 }
 
@@ -72,7 +162,7 @@
 }
 
 .s-post-title {
-    color: #fff;
+    color: #000;
     font-size: 1.6rem;
     margin-top: 15px;
     position: absolute;
@@ -89,4 +179,55 @@
 }
 .s-back-btn img {
     width: 65%;
+}
+.s-edit {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-top: 15px;
+    position: absolute;
+    right: 25%;
+}
+.s-destroy {
+    color: #fff;
+    font-size: 1.6rem;
+    margin-top: 15px;
+    position: absolute;
+    right: 5%;
+}
+
+.s-moodlist {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform:translateX(-50%);
+    display: flex;
+    z-index: 10;
+    li {
+        color: #FFF;
+        margin:10px;
+        width: 50px;
+        height: 50px;
+        background: transparent;
+        border: 1px solid #FFF;
+        border-radius: 50%;
+        text-align: center;
+        padding-top: 20px;
+    }
+}
+.s-post-btn {
+    background: #9e66d8;
+    height: 42px;
+    text-align: center;
+    input {
+        font-size: 1.6rem;
+        margin-top: 6px;
+        color: #fff;
+        
+    }
+}
+
+.s-content {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    overflow: scroll;
 }

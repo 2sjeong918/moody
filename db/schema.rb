@@ -11,25 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180629131824) do
+ActiveRecord::Schema.define(version: 20180703100705) do
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "postid"
-    t.integer  "userid"
+    t.integer  "post_id"
+    t.integer  "user_id"
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "user_name"
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.integer  "postid"
-    t.integer  "userid"
+  create_table "loves", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "points", force: :cascade do |t|
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "point_title"
+    t.integer  "post_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "content"
+    t.string   "cardimg"
+  end
+
   create_table "posts", force: :cascade do |t|
-    t.integer  "userid"
+    t.integer  "user_id"
     t.string   "title"
     t.string   "postimg"
     t.string   "mood1"

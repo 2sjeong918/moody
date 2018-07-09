@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :likes
   resources :comments
   resources :posts
+  resources :points
   
   root 'posts#index'
   
@@ -10,6 +11,11 @@ Rails.application.routes.draw do
   
   get 'developers/index'
 
+  get 'comments/index'
+  
+  
+    post "loves/:post_id/create" => "loves#create"
+  post "loves/:post_id/destroy" => "loves#destroy"
   
   
   # The priority is based upon order of creation: first created -> highest priority.

@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :userid, value: current_user.id %>
   <div class="field s-field">
     <%= f.label :title, "제목" %>
     <%= f.text_field :title, placeholder: "여행의 제목을 입력해주세요", :required => true %>
@@ -23,54 +23,55 @@
   <div>여행 무드를 5개 선택해주세요!</div>
   <div class="s-mood-wrapper">
       <div class="field s-mood">
-      <%= f.label :mood1, "romantic" %>
       <%= f.check_box :mood1, { checked: false }, 'romantic', '1' %>
+      <%= f.label :mood1, "romantic" %>
     </div>
     <div class="field s-mood">
-      <%= f.label :mood2, "tasty" %>
       <%= f.check_box :mood2, { checked: false }, 'tasty', '1' %>
+      <%= f.label :mood2, "tasty" %>
     </div>
     <div class="field s-mood">
-      <%= f.label :mood3, "luxury" %>
       <%= f.check_box :mood3, { checked: false }, 'luxury', '1' %>
+      <%= f.label :mood3, "luxury" %>
     </div>
     <div class="field s-mood">
-      <%= f.label :mood4, "healing" %>
       <%= f.check_box :mood4, { checked: false }, 'healing', '1' %>
+      <%= f.label :mood4, "healing" %>
     </div>
     <div class="field s-mood">
-      <%= f.label :mood5, "relaxing" %>
       <%= f.check_box :mood5, { checked: false }, 'relaxing', '1' %>
+      <%= f.label :mood5, "relaxing" %>
     </div>
     <div class="field s-mood">
-      <%= f.label :mood6, "break away" %>
-      <%= f.check_box :mood6, { checked: false }, 'break away', '1' %>
+      <%= f.check_box :mood6, { checked: false }, 'escape', '1' %>
+      <%= f.label :mood6, "escape" %>
     </div>
     <div class="field s-mood">
-      <%= f.label :mood7, "peaceful" %>
       <%= f.check_box :mood7, { checked: false }, 'peaceful', '1' %>
+      <%= f.label :mood7, "peaceful" %>
     </div>
     <div class="field s-mood">
-      <%= f.label :mood8, "active" %>
       <%= f.check_box :mood8, { checked: false }, 'active', '1' %>
+      <%= f.label :mood8, "active" %>
     </div>
     <div class="field s-mood">
-      <%= f.label :mood9, "challenging" %>
       <%= f.check_box :mood9, { checked: false }, 'challenging', '1' %>
+      <%= f.label :mood9, "challenging" %>
     </div>
     <div class="field s-mood">
-      <%= f.label :mood10, "meaningful" %>
       <%= f.check_box :mood10, { checked: false }, 'meaningful', '1' %>
+      <%= f.label :mood10, "meaningful" %>
     </div>
     <div class="field s-mood">
-      <%= f.label :mood11, "traditional" %>
       <%= f.check_box :mood11, { checked: false }, 'traditional', '1' %>
+      <%= f.label :mood11, "traditional" %>
     </div>
     <div class="field s-mood">
-      <%= f.label :mood12, "sight" %>
       <%= f.check_box :mood12, { checked: false }, 'sight', '1' %>
+      <%= f.label :mood12, "sight" %>
     </div>
   </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
